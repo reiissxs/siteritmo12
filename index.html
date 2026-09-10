@@ -31,6 +31,33 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
 .faq{display:grid;gap:10px;max-width:800px;margin:auto}.faq details{border:1px solid #202b23;border-radius:17px;background:#0a0f0c;padding:17px 19px}.faq summary{cursor:pointer;font-weight:850;font-size:14px}.faq p{color:#7c8980;font-size:12px;line-height:1.65;margin:12px 0 0}.footer{padding:42px 0 90px;border-top:1px solid #151d18;text-align:center}.footer img{height:64px}.footer p{color:#657168;font-size:10px;line-height:1.6;max-width:700px;margin:15px auto}.footer-links{display:flex;justify-content:center;gap:18px;color:#7a867e;font-size:10px;margin-top:13px}
 .toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,25px);opacity:0;pointer-events:none;background:#151e18;border:1px solid #334338;border-radius:14px;padding:12px 16px;font-size:12px;z-index:100;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
 @keyframes fadein{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+
+/* Scroll reveal */
+.reveal-on-scroll{opacity:0;transform:translateY(28px) scale(.985);filter:blur(5px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1),filter .75s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform,filter}
+.reveal-on-scroll.from-left{transform:translateX(-34px);}
+.reveal-on-scroll.from-right{transform:translateX(34px);}
+.reveal-on-scroll.visible{opacity:1;transform:none;filter:blur(0)}
+@media(prefers-reduced-motion:reduce){.reveal-on-scroll{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}}
+
+/* Upgrade modal */
+.bump{display:none!important}
+.upgrade-modal{position:fixed;inset:0;z-index:220;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(0,0,0,.72);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:.25s ease}
+.upgrade-modal.show{opacity:1;visibility:visible}
+.upgrade-card{width:min(520px,100%);position:relative;border:1px solid rgba(141,255,47,.42);border-radius:28px;background:linear-gradient(160deg,#142017 0%,#0a0f0c 52%,#080b09 100%);box-shadow:0 35px 120px rgba(0,0,0,.7),0 0 70px rgba(141,255,47,.09);padding:28px;transform:translateY(18px) scale(.97);transition:.28s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.upgrade-modal.show .upgrade-card{transform:none}
+.upgrade-card:before{content:"";position:absolute;left:-70px;top:-90px;width:220px;height:220px;border-radius:50%;background:rgba(141,255,47,.10);filter:blur(14px);pointer-events:none}
+.upgrade-close{position:absolute;right:16px;top:16px;width:36px;height:36px;border-radius:12px;border:1px solid #2a382e;background:#0e1510;color:#aab5ad;cursor:pointer;font-size:18px;display:grid;place-items:center}
+.upgrade-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(141,255,47,.1);border:1px solid rgba(141,255,47,.24);color:#bcff88;padding:7px 10px;border-radius:999px;font-size:10px;font-weight:950;letter-spacing:.11em;text-transform:uppercase}
+.upgrade-card h3{font-size:31px;line-height:1.03;letter-spacing:-.045em;margin:18px 0 10px;max-width:420px}.upgrade-card h3 span{color:var(--green)}
+.upgrade-card>p{margin:0;color:#96a29a;font-size:13px;line-height:1.65}
+.upgrade-comparison{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:22px 0 18px;padding:16px;border-radius:18px;background:#090e0b;border:1px solid #223027}
+.upgrade-price small{display:block;color:#6f7c73;font-size:9px;text-transform:uppercase;letter-spacing:.1em;font-weight:900;margin-bottom:4px}.upgrade-price strong{font-size:22px}.upgrade-price.highlight strong{color:var(--green)}.upgrade-arrow{color:#59675e;font-weight:900}
+.upgrade-save{padding:11px 13px;border-radius:14px;background:rgba(141,255,47,.08);border:1px solid rgba(141,255,47,.16);color:#baff86;font-size:12px;font-weight:800;margin-bottom:16px}
+.upgrade-primary{width:100%;font-size:14px;padding:17px 18px}
+.upgrade-decline{display:block;width:100%;border:0;background:transparent;color:#829087;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:14px 8px 2px;font-size:12px}
+.upgrade-decline:hover{color:#c9d2cc}
+body.modal-open{overflow:hidden}
+
 @media(max-width:900px){.navlinks{display:none}.hero{padding-top:48px}.hero-grid,.demo-wrap{grid-template-columns:1fr}.hero-grid{gap:38px}.app-shell{margin:auto}.demo-copy{position:static}.pain-grid{grid-template-columns:1fr}.strip-in{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr}}
 @media(max-width:600px){.container{width:min(100% - 22px,1160px)}.header-in{height:67px}.logo{height:46px}.top-cta{padding:10px 12px;font-size:11px}.hero{padding-top:38px}.hero h1{font-size:47px}.hero-copy{font-size:15px}.hero-actions .btn{width:100%}.app-shell{padding:8px;border-radius:29px}.app-screen{min-height:560px;border-radius:23px}.app-body{padding:18px}.strip-in{grid-template-columns:1fr 1fr;gap:16px 6px}.section{padding:70px 0}.section h2{font-size:38px}.form-grid,.result-top{grid-template-columns:1fr}.field.full{grid-column:auto}.calc-inner{padding:19px}.calc-head{padding:17px}.calc-head img{height:42px}.plan-top{align-items:flex-start}.price{font-size:32px}.plan{padding:20px}.features{gap:10px}}
 </style>
@@ -104,14 +131,30 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
 <section class="section" id="o-que-recebe"><div class="container"><div class="section-head"><div class="kicker">Dentro do Ritmo 12</div><h2>Mais do que um número de calorias.</h2><p>O aplicativo organiza a parte prática do processo para você saber o que comer, acompanhar sua evolução e ter uma próxima ação quando sair do ritmo.</p></div><div class="features"><article class="feature"><div class="feature-icon">01</div><h3>Dieta calculada</h3><p>O app estima TMB e gasto diário, trabalha com uma meta de déficit e distribui o plano em quatro refeições.</p></article><article class="feature"><div class="feature-icon">02</div><h3>Escolha seus alimentos</h3><p>Selecione até cinco fontes de carboidrato, proteína e verduras/legumes para personalizar o cardápio.</p></article><article class="feature"><div class="feature-icon">03</div><h3>Trocas equivalentes</h3><p>Veja substituições com quantidades aproximadas para variar a alimentação sem abandonar a estrutura do plano.</p></article><article class="feature"><div class="feature-icon">04</div><h3>Painel de 12 semanas</h3><p>Registre peso, check-ins e acompanhe seu progresso sem depender de planilhas soltas.</p></article><article class="feature"><div class="feature-icon">05</div><h3>SOS perda de controle</h3><p>Um fluxo rápido para registrar intensidade, reconhecer o gatilho e retomar o planejamento sem punições extremas.</p></article><article class="feature"><div class="feature-icon">06</div><h3>Conteúdo direto ao ponto</h3><p>Orientações curtas para fome, vontade de comer, finais de semana, deslizes e consistência.</p></article></div></div></section>
 <section class="section pricing-section" id="planos"><div class="pricing-wrap"><div class="section-head"><div class="kicker">Acesso ao Ritmo 12</div><h2>Escolha como quer começar.</h2><p>Você recebe acesso ao aplicativo completo. O vitalício está em destaque porque elimina mensalidades futuras.</p></div><div class="price-stack">
   <div class="plan" id="monthlyPlan" data-plan="monthly"><div class="plan-top"><div style="display:flex;gap:13px;align-items:center"><span class="radio"></span><div><h3>Acesso Mensal</h3><p>Para começar pagando o mínimo.</p></div></div><div class="price">R$ 14,90 <small>/mês</small></div></div><div class="plan-details"><span>App completo</span><span>Dieta personalizada</span><span>Cancelar quando quiser</span></div></div>
-  <div id="bump" class="bump hidden"><div class="bump-head"><input class="bump-check" id="bumpCheck" type="checkbox"><label for="bumpCheck"><h4>OFERTA ESPECIAL: fique com o <span>vitalício por R$ 19,90</span></h4><p>Você ia pagar R$ 14,90 no primeiro mês. Adicione somente <strong style="color:white">R$ 5,00</strong> e troque sua compra por acesso vitalício. Sem próxima mensalidade.</p></label></div><div class="bump-price">R$ 14,90 + R$ 5,00 = <strong>R$ 19,90 uma única vez</strong></div></div>
   <div class="plan featured selected" id="lifetimePlan" data-plan="lifetime"><span class="best">Mais vantajoso</span><div class="plan-top"><div style="display:flex;gap:13px;align-items:center"><span class="radio"></span><div><h3>Acesso Vitalício</h3><p>Pague uma vez e continue com o app.</p></div></div><div class="price">R$ 27,90 <small>único</small></div></div><div class="plan-details"><span>Sem mensalidade</span><span>App completo</span><span>Dieta + acompanhamento</span></div></div>
 </div>
 <div class="checkout-summary"><div class="summary-line"><span>Plano selecionado</span><strong id="selectedName">Acesso Vitalício</strong></div><div class="summary-line"><span>Cobrança</span><span id="selectedBilling">Pagamento único</span></div><div class="summary-line total"><span>Total hoje</span><strong id="selectedPrice">R$ 27,90</strong></div><button class="btn btn-green checkout-btn" id="checkoutBtn">Quero acessar o Ritmo 12 →</button><div class="payment-note">Checkout ainda não conectado. Os links do gateway podem ser inseridos no código quando definidos.</div></div>
 </div></section>
-<section class="section"><div class="container"><div class="section-head"><div class="kicker">Dúvidas rápidas</div><h2>Antes de começar.</h2></div><div class="faq"><details><summary>O Ritmo 12 é uma consulta nutricional?</summary><p>Não. É uma ferramenta digital educacional de planejamento e organização. Ela usa estimativas matemáticas e não substitui avaliação individual com nutricionista ou médico.</p></details><details><summary>Minha dieta será igual à de todo mundo?</summary><p>Não. O cálculo parte dos dados informados e o aplicativo permite escolher alimentos e montar a estrutura do cardápio a partir dessas preferências. Ainda assim, trata-se de uma estimativa automatizada.</p></details><details><summary>O que acontece se eu escolher o mensal?</summary><p>O mensal custa R$ 14,90 por mês. Durante a seleção, pode aparecer uma condição especial para converter essa compra em acesso vitalício por R$ 19,90 no total.</p></details><details><summary>O vitalício de R$ 27,90 tem mensalidade?</summary><p>Não. O plano vitalício destacado é um pagamento único de R$ 27,90.</p></details></div></div></section>
+<section class="section"><div class="container"><div class="section-head"><div class="kicker">Dúvidas rápidas</div><h2>O que você precisa saber.</h2><p>Respostas simples antes de liberar seu acesso ao Ritmo 12.</p></div><div class="faq"><details><summary>Em quanto tempo eu recebo meu acesso?</summary><p>Assim que o pagamento for aprovado, o acesso pode ser liberado imediatamente para você entrar no Ritmo 12 e começar seu plano.</p></details><details><summary>Preciso saber contar calorias?</summary><p>Não. Você informa seus dados, escolhe os alimentos que prefere e o sistema organiza as estimativas e porções do plano para deixar o processo mais simples.</p></details><details><summary>Eu posso escolher os alimentos que gosto de comer?</summary><p>Sim. O Ritmo 12 permite selecionar fontes de carboidrato, proteína e verduras/legumes para montar um plano mais compatível com suas preferências.</p></details><details><summary>Consigo usar o Ritmo 12 pelo celular?</summary><p>Sim. A experiência foi desenvolvida para funcionar tanto no celular quanto no computador, permitindo acompanhar o plano de onde você estiver.</p></details><details><summary>Posso acompanhar minha evolução dentro do app?</summary><p>Sim. Você pode registrar seu progresso ao longo das 12 semanas e acompanhar seus dados no próprio painel.</p></details></div></div></section>
 </main>
 <footer class="footer"><div class="container"><img src="assets/ritmo12-logo.png" alt="Ritmo 12"><p>Ritmo 12 é uma ferramenta educacional de organização alimentar e acompanhamento de hábitos. Resultados variam conforme características individuais e adesão. Em caso de transtorno alimentar, gestação, condição clínica ou necessidade dietética específica, procure acompanhamento profissional.</p><div class="footer-links"><a href="#">Termos de Uso</a><a href="#">Política de Privacidade</a><a href="#planos">Planos</a></div></div></footer>
+
+<div class="upgrade-modal" id="upgradeModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="upgradeTitle">
+  <div class="upgrade-card">
+    <button class="upgrade-close" id="upgradeClose" aria-label="Fechar oferta">×</button>
+    <div class="upgrade-tag">⚡ Oferta exclusiva desta tela</div>
+    <h3 id="upgradeTitle">Antes de assinar: leve o <span>vitalício</span> por apenas R$ 5 a mais.</h3>
+    <p>Você selecionou R$ 14,90 por mês. Por mais R$ 5 hoje, seu acesso pode virar vitalício e você não precisa pagar outra mensalidade.</p>
+    <div class="upgrade-comparison">
+      <div class="upgrade-price"><small>Você escolheu</small><strong>R$ 14,90</strong><small>por mês</small></div>
+      <div class="upgrade-arrow">→</div>
+      <div class="upgrade-price highlight"><small>Oferta agora</small><strong>R$ 19,90</strong><small>uma única vez</small></div>
+    </div>
+    <div class="upgrade-save">Somente + R$ 5,00 agora para eliminar as próximas mensalidades.</div>
+    <button class="btn btn-green upgrade-primary" id="acceptUpgrade">Sim, quero o vitalício por R$ 19,90 →</button>
+    <button class="upgrade-decline" id="declineUpgrade">Não, prefiro continuar com R$ 14,90 por mês</button>
+  </div>
+</div>
 <div class="toast" id="toast">Checkout de demonstração. Conecte aqui o link do seu gateway.</div>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -122,10 +165,87 @@ function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show'
 $('#calculateBtn').onclick=async()=>{const d=validate();if(!d)return;$('#calcForm').classList.add('hidden');$('#calcProcessing').classList.remove('hidden');const items=$$('.process-item');items.forEach(x=>x.classList.remove('active','done'));for(let i=0;i<items.length;i++){items[i].classList.add('active');items[i].lastElementChild.innerHTML='<span class="pulse"></span>';await new Promise(r=>setTimeout(r,520));items[i].classList.remove('active');items[i].classList.add('done');items[i].lastElementChild.textContent='✓'}const bmr=calcBMR(d),tdee=bmr*d.activity;$('#bmrValue').innerHTML=`${Math.round(bmr).toLocaleString('pt-BR')} <span>kcal/dia</span>`;$('#tdeeValue').innerHTML=`${Math.round(tdee).toLocaleString('pt-BR')} <span>kcal/dia</span>`;$('#calcProcessing').classList.add('hidden');$('#calcResult').classList.remove('hidden')}
 $('#recalcBtn').onclick=()=>{$('#calcResult').classList.add('hidden');$('#calcForm').classList.remove('hidden')};$('#unlockBtn').onclick=()=>document.querySelector('#planos').scrollIntoView({behavior:'smooth'});
 let selected='lifetime';
-function selectPlan(plan){selected=plan;$('#monthlyPlan').classList.toggle('selected',plan==='monthly');$('#lifetimePlan').classList.toggle('selected',plan==='lifetime');if(plan==='monthly'){$('#bump').classList.remove('hidden')}else{$('#bump').classList.add('hidden');$('#bumpCheck').checked=false}updateSummary()}
-$('#monthlyPlan').onclick=()=>selectPlan('monthly');$('#lifetimePlan').onclick=()=>selectPlan('lifetime');$('#bumpCheck').onchange=updateSummary;
-function updateSummary(){const bump=selected==='monthly'&&$('#bumpCheck').checked;if(bump){$('#selectedName').textContent='Vitalício — oferta especial';$('#selectedBilling').textContent='Pagamento único';$('#selectedPrice').textContent='R$ 19,90';$('#checkoutBtn').textContent='Quero o vitalício por R$ 19,90 →'}else if(selected==='monthly'){$('#selectedName').textContent='Acesso Mensal';$('#selectedBilling').textContent='R$ 14,90 por mês';$('#selectedPrice').textContent='R$ 14,90';$('#checkoutBtn').textContent='Assinar por R$ 14,90/mês →'}else{$('#selectedName').textContent='Acesso Vitalício';$('#selectedBilling').textContent='Pagamento único';$('#selectedPrice').textContent='R$ 27,90';$('#checkoutBtn').textContent='Quero o vitalício por R$ 27,90 →'}}
-$('#checkoutBtn').onclick=()=>toast('Checkout de demonstração. Envie o link do gateway para eu conectar este botão.');
+function selectPlan(plan){
+  selected=plan;
+  $('#monthlyPlan').classList.toggle('selected',plan==='monthly' || plan==='special');
+  $('#lifetimePlan').classList.toggle('selected',plan==='lifetime');
+  updateSummary();
+}
+$('#monthlyPlan').onclick=()=>selectPlan('monthly');
+$('#lifetimePlan').onclick=()=>selectPlan('lifetime');
+function updateSummary(){
+  if(selected==='special'){
+    $('#selectedName').textContent='Vitalício — oferta especial';
+    $('#selectedBilling').textContent='Pagamento único';
+    $('#selectedPrice').textContent='R$ 19,90';
+    $('#checkoutBtn').textContent='Finalizar vitalício por R$ 19,90 →';
+  }else if(selected==='monthly'){
+    $('#selectedName').textContent='Acesso Mensal';
+    $('#selectedBilling').textContent='R$ 14,90 por mês';
+    $('#selectedPrice').textContent='R$ 14,90';
+    $('#checkoutBtn').textContent='Assinar por R$ 14,90/mês →';
+  }else{
+    $('#selectedName').textContent='Acesso Vitalício';
+    $('#selectedBilling').textContent='Pagamento único';
+    $('#selectedPrice').textContent='R$ 27,90';
+    $('#checkoutBtn').textContent='Quero o vitalício por R$ 27,90 →';
+  }
+}
+function openUpgradeModal(){
+  $('#upgradeModal').classList.add('show');
+  $('#upgradeModal').setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+}
+function closeUpgradeModal(){
+  $('#upgradeModal').classList.remove('show');
+  $('#upgradeModal').setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+}
+function demoCheckout(planLabel){
+  toast(`Checkout de demonstração: ${planLabel}. Envie o link do gateway para conectar.`);
+}
+$('#upgradeClose').onclick=closeUpgradeModal;
+$('#upgradeModal').onclick=e=>{if(e.target===$('#upgradeModal')) closeUpgradeModal()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeUpgradeModal()});
+$('#acceptUpgrade').onclick=()=>{
+  selected='special';
+  updateSummary();
+  closeUpgradeModal();
+  demoCheckout('Vitalício por R$ 19,90');
+};
+$('#declineUpgrade').onclick=()=>{
+  selected='monthly';
+  updateSummary();
+  closeUpgradeModal();
+  demoCheckout('Mensal por R$ 14,90/mês');
+};
+$('#checkoutBtn').onclick=()=>{
+  if(selected==='monthly'){
+    openUpgradeModal();
+    return;
+  }
+  if(selected==='special') demoCheckout('Vitalício por R$ 19,90');
+  else demoCheckout('Vitalício por R$ 27,90');
+};
+
+// Scroll animations
+const revealTargets=[
+  ...$$('.section-head'),...$$('.pain'),...$$('.feature'),...$$('.plan'),
+  ...$$('.calculator'),...$$('.app-shell'),...$$('.strip-item'),...$$('.faq details'),
+  ...$$('.checkout-summary')
+];
+revealTargets.forEach((el,i)=>{
+  el.classList.add('reveal-on-scroll');
+  if(el.classList.contains('calculator')) el.classList.add('from-right');
+  if(el.classList.contains('app-shell')) el.classList.add('from-right');
+  el.style.transitionDelay=`${Math.min((i%6)*55,275)}ms`;
+});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}
+  });
+},{threshold:.12,rootMargin:'0px 0px -45px 0px'});
+revealTargets.forEach(el=>observer.observe(el));
 updateSummary();
 </script>
 </body>
