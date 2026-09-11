@@ -154,7 +154,7 @@ body.modal-open{overflow:hidden}
   <div class="plan" id="monthlyPlan" data-plan="monthly"><div class="plan-top"><div style="display:flex;gap:13px;align-items:center"><span class="radio"></span><div><h3>Acesso Mensal</h3><p>Para começar pagando o mínimo.</p></div></div><div class="price">R$ 14,90 <small>/mês</small></div></div><div class="plan-details"><span>App completo</span><span>Dieta personalizada</span><span>Cancelar quando quiser</span></div></div>
   <div class="plan featured selected" id="lifetimePlan" data-plan="lifetime"><span class="best">Mais vantajoso</span><div class="plan-top"><div style="display:flex;gap:13px;align-items:center"><span class="radio"></span><div><h3>Acesso Vitalício</h3><p>Pague uma vez e continue com o app.</p></div></div><div class="price">R$ 27,90 <small>único</small></div></div><div class="plan-details"><span>Sem mensalidade</span><span>App completo</span><span>Dieta + acompanhamento</span></div></div>
 </div>
-<div class="checkout-summary"><div class="summary-line"><span>Plano selecionado</span><strong id="selectedName">Acesso Vitalício</strong></div><div class="summary-line"><span>Cobrança</span><span id="selectedBilling">Pagamento único</span></div><div class="summary-line total"><span>Total hoje</span><strong id="selectedPrice">R$ 27,90</strong></div><button class="btn btn-green checkout-btn" id="checkoutBtn">Quero acessar o Ritmo 12 →</button><div class="payment-note">Pagamento processado com segurança pela Cakto.</div></div>
+<div class="checkout-summary"><div class="summary-line"><span>Plano selecionado</span><strong id="selectedName">Acesso Vitalício</strong></div><div class="summary-line"><span>Cobrança</span><span id="selectedBilling">Pagamento único</span></div><div class="summary-line total"><span>Total hoje</span><strong id="selectedPrice">R$ 27,90</strong></div><button class="btn btn-green checkout-btn" id="checkoutBtn">Quero acessar o Ritmo 12 →</button><div class="payment-note">Checkout ainda não conectado. Os links do gateway podem ser inseridos no código quando definidos.</div></div>
 </div></section>
 <section class="section"><div class="container"><div class="section-head"><div class="kicker">Dúvidas rápidas</div><h2>O que você precisa saber.</h2><p>Respostas simples antes de liberar seu acesso ao Ritmo 12.</p></div><div class="faq"><details><summary>Em quanto tempo eu recebo meu acesso?</summary><p>Assim que o pagamento for aprovado, o acesso pode ser liberado imediatamente para você entrar no Ritmo 12 e começar seu plano.</p></details><details><summary>Preciso saber contar calorias?</summary><p>Não. Você informa seus dados, escolhe os alimentos que prefere e o sistema organiza as estimativas e porções do plano para deixar o processo mais simples.</p></details><details><summary>Eu posso escolher os alimentos que gosto de comer?</summary><p>Sim. O Ritmo 12 permite selecionar fontes de carboidrato, proteína e verduras/legumes para montar um plano mais compatível com suas preferências.</p></details><details><summary>Consigo usar o Ritmo 12 pelo celular?</summary><p>Sim. A experiência foi desenvolvida para funcionar tanto no celular quanto no computador, permitindo acompanhar o plano de onde você estiver.</p></details><details><summary>Posso acompanhar minha evolução dentro do app?</summary><p>Sim. Você pode registrar seu progresso ao longo das 12 semanas e acompanhar seus dados no próprio painel.</p></details></div></div></section>
 </main>
@@ -222,15 +222,8 @@ function closeUpgradeModal(){
   $('#upgradeModal').setAttribute('aria-hidden','true');
   document.body.classList.remove('modal-open');
 }
-const CHECKOUTS={
-  lifetime:'https://pay.cakto.com.br/x8pfqf5_1100780',
-  special:'https://pay.cakto.com.br/34mw5n9',
-  monthly:'https://pay.cakto.com.br/36m2edv'
-};
-function goCheckout(plan){
-  const url=CHECKOUTS[plan];
-  if(!url){toast('Checkout indisponível.');return;}
-  window.location.href=url;
+function demoCheckout(planLabel){
+  toast(`Checkout de demonstração: ${planLabel}. Envie o link do gateway para conectar.`);
 }
 $('#upgradeClose').onclick=closeUpgradeModal;
 $('#upgradeModal').onclick=e=>{if(e.target===$('#upgradeModal')) closeUpgradeModal()};
@@ -239,21 +232,21 @@ $('#acceptUpgrade').onclick=()=>{
   selected='special';
   updateSummary();
   closeUpgradeModal();
-  goCheckout('special');
+  demoCheckout('Vitalício por R$ 19,90');
 };
 $('#declineUpgrade').onclick=()=>{
   selected='monthly';
   updateSummary();
   closeUpgradeModal();
-  goCheckout('monthly');
+  demoCheckout('Mensal por R$ 14,90/mês');
 };
 $('#checkoutBtn').onclick=()=>{
   if(selected==='monthly'){
     openUpgradeModal();
     return;
   }
-  if(selected==='special') goCheckout('special');
-  else goCheckout('lifetime');
+  if(selected==='special') demoCheckout('Vitalício por R$ 19,90');
+  else demoCheckout('Vitalício por R$ 27,90');
 };
 
 // Scroll animations
