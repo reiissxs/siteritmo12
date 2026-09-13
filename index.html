@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#050506" />
-<link rel="icon" type="image/png" href="assets/ritmo12-logo.png" />
-<title>Ritmo 12 — Seu plano para emagrecer com mais controle</title>
-<meta name="description" content="Conheça o Ritmo 12: plano de 12 semanas com cálculo estimado, cardápio simples, escolhas alimentares e ferramentas para manter consistência." />
+<meta name="theme-color" content="#F7F4EC" />
+<link rel="icon" type="image/png" href="assets/viora-logo-source.png" />
+<title>Viora Health apresenta Ritmo 12 — uma rotina mais leve, todos os dias</title>
+<meta name="description" content="Conheça o Ritmo 12, programa digital da Viora Health para organizar alimentação, acompanhamento e consistência ao longo de 12 semanas." />
 <style>
 :root{
   --bg:#050506;--bg2:#09090a;--surface:#0e0e10;--surface2:#121214;--surface3:#17171a;
@@ -78,6 +78,31 @@ body.modal-open{overflow:hidden}
 .plan.selected{box-shadow:0 0 0 3px rgba(255,31,45,.09),0 18px 55px rgba(255,31,45,.06)}
 .hero:after{content:"";position:absolute;width:420px;height:420px;right:-180px;top:-170px;background:radial-gradient(circle,rgba(255,31,45,.12),transparent 68%);pointer-events:none;filter:blur(8px)}
 
+
+/* ===== VIORA HEALTH THEME ===== */
+:root{
+  --bg:#f7f4ec;--bg2:#f1eee4;--surface:#fffdf8;--surface2:#f2f0e7;--surface3:#e8ede2;
+  --line:#d9ddcf;--line2:#c7cebd;--text:#173327;--muted:#627265;--muted2:#7f8d81;
+  --green:#6f8f69;--green2:#8aa17e;--green3:#244737;--green-soft:rgba(111,143,105,.14);
+  --danger:#b85e5e;--warn:#bd9857;--shadow:0 26px 80px rgba(42,65,50,.12)
+}
+body{background:var(--bg);color:var(--text)}
+body:before{background:radial-gradient(circle at 9% 4%,rgba(139,164,126,.18),transparent 28%),radial-gradient(circle at 88% 13%,rgba(36,71,55,.08),transparent 24%)}
+.header{background:rgba(247,244,236,.88);border-bottom:1px solid rgba(23,51,39,.08);box-shadow:0 8px 30px rgba(36,71,55,.04)}
+.header-in{height:84px}.brand-link{display:flex;align-items:center}.logo{height:57px;border-radius:8px;mix-blend-mode:multiply}.navlinks{color:#607065}.navlinks a:hover{color:#173327}.top-cta{background:#244737;color:#fff;box-shadow:0 10px 30px rgba(36,71,55,.16);border-radius:999px}
+.hero{padding:64px 0 72px}.hero-grid{grid-template-columns:1fr .9fr;gap:72px}.eyebrow{border-color:rgba(36,71,55,.16);background:#edf1e8;color:#48624f}.dot{background:#6f8f69;box-shadow:none}
+h1{font-size:clamp(48px,6.3vw,80px);color:#173327}.hero-lead{font-size:26px;line-height:1.2;margin:-4px 0 16px;color:#536d58;font-weight:650}.hero-copy{color:#596b5d}.hero-copy strong{color:#244737}.btn-green{background:#244737;color:#fff;box-shadow:0 15px 40px rgba(36,71,55,.18)}.btn-dark{background:#fffdf8;color:#244737;border:1px solid #cfd7c8}.trust{color:#607065}.checkmini{color:#6f8f69}.company-note{margin-top:30px;padding-left:16px;border-left:2px solid #9bb091}.company-note span{font-size:11px;letter-spacing:.22em;font-weight:950;color:#244737}.company-note p{margin:5px 0 0;font-size:13px;color:#748076}
+.hero-visual{position:relative;min-height:650px}.hero-model-wrap{position:absolute;inset:0 0 0 8%;border-radius:44px 44px 130px 44px;overflow:hidden;background:#e4e8dc;box-shadow:var(--shadow)}.hero-model{width:100%;height:100%;object-fit:cover;object-position:52% 35%;display:block;filter:saturate(.88) contrast(.98)}.hero-model-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(247,244,236,0) 56%,rgba(23,51,39,.18));pointer-events:none}.hero-program-card{position:absolute;left:-10px;bottom:52px;width:min(345px,82%);padding:24px 26px;border-radius:28px;background:rgba(255,253,248,.93);backdrop-filter:blur(18px);box-shadow:0 22px 55px rgba(36,71,55,.18);border:1px solid rgba(255,255,255,.7)}.hero-program-card small{display:block;letter-spacing:.25em;color:#738272;font-weight:800;font-size:10px}.hero-program-card strong{display:block;font-size:42px;letter-spacing:-.05em;color:#173327;margin:6px 0}.hero-program-card span{display:block;color:#657567;line-height:1.45;font-size:13px}.hero-floating{position:absolute;background:#244737;color:#fff;border-radius:999px;padding:11px 16px;font-size:11px;letter-spacing:.04em;box-shadow:0 12px 30px rgba(36,71,55,.18)}.hero-floating-top{right:-14px;top:42px}.hero-floating-bottom{right:-8px;bottom:18px;background:#7e9975}
+.strip{background:#e8ede2;border-color:#dbe1d4}.strip-item b{color:#244737}.strip-item span{color:#6d796f}
+.brand-story{padding:82px 0;background:#244737;color:#fff}.brand-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}.brand-story .kicker{color:#b9ccb0}.brand-story h2{font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-.05em;margin:14px 0}.brand-story-copy p{color:#dfe8dd;line-height:1.75;margin:0 0 14px}.brand-signature{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);display:flex;align-items:center;gap:16px;flex-wrap:wrap}.brand-signature b{letter-spacing:.18em}.brand-signature span{color:#bfcdbd;font-size:13px}
+.section{background:transparent}.section-head p{color:#667569}.kicker{color:#6f8f69}.pain,.feature{background:#fffdf8;border-color:#dce1d7;box-shadow:0 14px 35px rgba(36,71,55,.04)}.pain p,.feature p{color:#657268}.pain-num{color:#6f8f69}
+.demo-section{background:#eef1e8;border-color:#dce2d6}.demo-copy p,.demo-bullet{color:#617064}.calculator{background:#fffdf8;border-color:#cfd8c9;box-shadow:0 30px 80px rgba(36,71,55,.12)}.calc-head{background:#f4f2ea;border-color:#d9dfd3}.calc-head img,.processing-logo{mix-blend-mode:multiply;border-radius:8px}.calc-badge{background:#e2e9dc;color:#45604c;border-color:#c7d2c1}.field label,.fine{color:#6c786f}.field input,.field select{background:#fff;color:#173327;border-color:#ccd5c6}.field input:focus,.field select:focus{border-color:#7f9a77;box-shadow:0 0 0 3px rgba(111,143,105,.12)}.result-box,.diet-lock{background:#f7f5ee;border-color:#d8dfd2}.lock-overlay{background:rgba(247,244,236,.78)}
+.pricing-section{background:linear-gradient(180deg,#f7f4ec,#eef1e8)}.plan,.checkout-summary{background:#fffdf8;border-color:#d5ddd0}.plan.featured,.plan.selected{border-color:#789571;box-shadow:0 18px 55px rgba(36,71,55,.11)}.best{background:#244737;color:#fff}.price{color:#244737}.payment-note{color:#738075}
+.faq details{background:#fffdf8;border-color:#d8ded3}.faq summary{color:#244737}.faq p{color:#69766c}.footer{background:#173327;border-top:0;color:#e8efe6}.footer img{mix-blend-mode:normal;border-radius:8px}.footer p{color:#bdc9bd}.footer-links a{color:#d9e3d7}.footer-program{color:#aebdab;font-size:12px;letter-spacing:.08em;margin:8px 0 15px}
+.upgrade-modal{background:rgba(23,51,39,.55)}.upgrade-card{background:#fffdf8;color:#173327;border-color:#cfd9ca}.upgrade-tag{color:#5b775f}.upgrade-primary{background:#244737}.upgrade-save{background:#e9efe5;color:#45604c;border-color:#d1dbcc}
+@media(max-width:900px){.hero-grid,.brand-story-grid{grid-template-columns:1fr}.hero-visual{min-height:600px;margin-top:4px}.hero-grid{gap:38px}.hero-model-wrap{inset:0 0 0 0;border-radius:34px 34px 90px 34px}.hero-program-card{left:14px;bottom:32px}.hero-floating-top{right:10px}.hero-floating-bottom{right:10px}.brand-story{padding:64px 0}.logo{height:50px}}
+@media(max-width:560px){.header-in{height:72px}.logo{height:42px}.top-cta{font-size:11px;padding:10px 13px}.hero{padding:38px 0 54px}h1{font-size:48px}.hero-lead{font-size:21px}.hero-visual{min-height:520px}.hero-program-card strong{font-size:35px}.hero-floating{font-size:9px;padding:9px 12px}.hero-floating-bottom{display:none}.strip-in{grid-template-columns:1fr 1fr}.brand-story-grid{gap:25px}}
+
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -100,42 +125,37 @@ src="https://www.facebook.com/tr?id=27150583831284858&ev=PageView&noscript=1"
 <body>
 <header class="header">
   <div class="container header-in">
-    <a href="#inicio"><img class="logo" src="assets/ritmo12-logo.png" alt="Ritmo 12"></a>
+    <a href="#inicio" class="brand-link"><img class="logo" src="assets/viora-wordmark.jpg" alt="Viora Health"></a>
     <nav class="navlinks"><a href="#como-funciona">Como funciona</a><a href="#simulador">Simulador</a><a href="#o-que-recebe">O que recebe</a><a href="#planos">Planos</a></nav>
-    <a class="top-cta" href="#simulador">Calcular minha TMB</a>
+    <a class="top-cta" href="#planos">Conhecer o Ritmo 12</a>
   </div>
 </header>
 <main>
 <section class="hero" id="inicio">
   <div class="container hero-grid">
-    <div>
-      <div class="eyebrow"><span class="dot"></span> Seu plano começa pelos seus dados</div>
-      <h1>Emagrecer não precisa ser um ciclo de <span>começar e desistir.</span></h1>
-      <p class="hero-copy">O Ritmo 12 organiza seus dados, estima suas necessidades e transforma isso em um plano simples de 12 semanas — com alimentação prática, escolhas que combinam com você e ferramentas para manter o controle quando a vontade aperta.</p>
-      <div class="hero-actions"><a class="btn btn-green" href="#simulador">Calcular minha TMB agora →</a><a class="btn btn-dark" href="#o-que-recebe">Ver o que eu recebo</a></div>
-      <div class="trust"><span><b class="checkmini">✓</b> Acesso imediato</span><span><b class="checkmini">✓</b> Funciona no celular</span><span><b class="checkmini">✓</b> Plano simples e direto</span></div>
+    <div class="hero-content">
+      <div class="eyebrow"><span class="dot"></span> VIORA HEALTH APRESENTA</div>
+      <h1>Seu bem-estar <span>em primeiro lugar.</span></h1>
+      <p class="hero-lead">Emagrecer também é cuidar de você.</p>
+      <p class="hero-copy">O <strong>Ritmo 12</strong> é um programa digital da <strong>Viora Health</strong> criado para ajudar você a construir uma rotina alimentar mais organizada, prática e possível de manter ao longo de 12 semanas.</p>
+      <div class="hero-actions"><a class="btn btn-green" href="#simulador">Descobrir meu plano →</a><a class="btn btn-dark" href="#o-que-recebe">Conhecer o Ritmo 12</a></div>
+      <div class="trust"><span><b class="checkmini">✓</b> Plano personalizado</span><span><b class="checkmini">✓</b> Acompanhamento diário</span><span><b class="checkmini">✓</b> Modo SOS</span></div>
+      <div class="company-note"><span>VIORA HEALTH</span><p>Uma vida mais leve, todos os dias.</p></div>
     </div>
-    <div class="app-shell" aria-label="Prévia do Ritmo 12 em um smartphone premium estilo iPhone 17 Pro Max">
-      <span class="iphone-side action" aria-hidden="true"></span><span class="iphone-side volume-up" aria-hidden="true"></span><span class="iphone-side volume-down" aria-hidden="true"></span><span class="iphone-side power" aria-hidden="true"></span>
-      <div class="app-screen">
-        <div class="iphone-status"><span class="iphone-time">9:41</span><span class="iphone-island" aria-hidden="true"></span><span class="iphone-status-right"><span class="iphone-signal">▂▄▆█</span><span>5G</span><span class="iphone-battery" aria-hidden="true"></span></span></div>
-        <div class="app-head"><img class="app-brand" src="assets/ritmo12-logo.png" alt="Ritmo 12"><span class="app-chip">Semana 01</span></div>
-        <div class="app-body">
-          <div class="hello">SEU PAINEL</div><div class="app-title">Bom dia. Continue no ritmo.</div>
-          <div class="app-card highlight"><div class="label">Meta diária estimada</div><div class="metric-big">1.890 <span>kcal/dia</span></div><div class="mini-progress"><i></i></div></div>
-          <div class="app-row"><div class="mini-card"><div class="label">Progresso</div><b>4/12</b></div><div class="mini-card"><div class="label">Sequência</div><b>6 dias</b></div></div>
-          <div class="app-card locked-card" style="margin-top:10px"><div class="label">Seu cardápio</div><div class="fake-lines"><i></i><i></i><i></i><i></i></div><div class="lock-center"><div><div class="lock-icon">↗</div><div style="font-size:11px;margin-top:8px;font-weight:850">Plano montado para você</div></div></div></div>
-        </div>
-        <span class="iphone-home" aria-hidden="true"></span>
-      </div>
+    <div class="hero-visual" aria-label="Viora Health e programa Ritmo 12">
+      <div class="hero-model-wrap"><img src="assets/viora-modelo.jpg" alt="Mulher em uma rotina de bem-estar" class="hero-model"></div>
+      <div class="hero-program-card"><small>PROGRAMA</small><strong>RITMO 12</strong><span>12 semanas para construir uma rotina que você consiga continuar.</span></div>
+      <div class="hero-floating hero-floating-top">Saúde · rotina · consistência</div>
+      <div class="hero-floating hero-floating-bottom">✓ 100% online &nbsp; · &nbsp; acesso imediato</div>
     </div>
   </div>
 </section>
-<section class="strip"><div class="container strip-in"><div class="strip-item"><b>12 semanas</b><span>para construir consistência</span></div><div class="strip-item"><b>4 refeições</b><span>simples e organizadas</span></div><div class="strip-item"><b>Escolhas pessoais</b><span>carbo, proteína e vegetais</span></div><div class="strip-item"><b>SOS no app</b><span>para momentos de perda de controle</span></div></div></section>
-<section class="section" id="como-funciona"><div class="container"><div class="section-head"><div class="kicker">Por que é diferente</div><h2>Você provavelmente já sabe o básico. O difícil é manter.</h2><p>O Ritmo 12 foi desenhado para reduzir atrito: menos improviso, menos “segunda eu começo”, mais clareza sobre o que fazer hoje.</p></div><div class="pain-grid"><article class="pain"><div class="pain-num">01 / ROTINA</div><h3>Sem saber quanto comer</h3><p>O sistema parte dos seus dados para estimar seu metabolismo e organizar uma meta energética compatível com o programa.</p></article><article class="pain"><div class="pain-num">02 / ALIMENTAÇÃO</div><h3>Sem dieta cheia de coisa estranha</h3><p>Você escolhe alimentos simples que gosta e o plano usa essas escolhas para montar refeições práticas e substituições.</p></article><article class="pain"><div class="pain-num">03 / COMPORTAMENTO</div><h3>Sem transformar um deslize em desistência</h3><p>Ferramentas rápidas ajudam você a registrar gatilhos, retomar o plano e evitar o pensamento de “já estraguei tudo”.</p></article></div></div></section>
+<section class="strip"><div class="container strip-in"><div class="strip-item"><b>Plano personalizado</b><span>de acordo com seus dados e rotina</span></div><div class="strip-item"><b>Acompanhamento diário</b><span>visualize sua evolução</span></div><div class="strip-item"><b>12 semanas</b><span>com uma direção clara</span></div><div class="strip-item"><b>Modo SOS</b><span>para os momentos mais difíceis</span></div></div></section>
+<section class="brand-story"><div class="container brand-story-grid"><div><div class="kicker">CUIDADO QUE CABE NA SUA ROTINA</div><h2>Não é sobre fazer tudo perfeito. É sobre ter uma direção para continuar.</h2></div><div class="brand-story-copy"><p>A Viora Health nasceu com uma proposta simples: transformar objetivos de bem-estar em rotinas mais claras, leves e acompanháveis.</p><p>O Ritmo 12 é o nosso programa digital de 12 semanas para quem quer organizar a alimentação, acompanhar o progresso e parar de depender de mais um “segunda eu começo”.</p><div class="brand-signature"><b>VIORA HEALTH</b><span>Uma vida mais leve, todos os dias.</span></div></div></div></section>
+<section class="section" id="como-funciona"><div class="container"><div class="section-head"><div class="kicker">O MÉTODO RITMO 12</div><h2>Uma estrutura simples para você saber o que fazer hoje.</h2><p>Menos improviso, menos recomeços e mais clareza para construir consistência no seu próprio ritmo.</p></div><div class="pain-grid"><article class="pain"><div class="pain-num">01 / ROTINA</div><h3>Sem saber quanto comer</h3><p>O sistema parte dos seus dados para estimar seu metabolismo e organizar uma meta energética compatível com o programa.</p></article><article class="pain"><div class="pain-num">02 / ALIMENTAÇÃO</div><h3>Sem dieta cheia de coisa estranha</h3><p>Você escolhe alimentos simples que gosta e o plano usa essas escolhas para montar refeições práticas e substituições.</p></article><article class="pain"><div class="pain-num">03 / COMPORTAMENTO</div><h3>Sem transformar um deslize em desistência</h3><p>Ferramentas rápidas ajudam você a registrar gatilhos, retomar o plano e evitar o pensamento de “já estraguei tudo”.</p></article></div></div></section>
 <section class="section demo-section" id="simulador"><div class="container demo-wrap"><div class="demo-copy"><div class="kicker">Experimente antes</div><h2>Veja uma parte do Ritmo 12 funcionando agora.</h2><p>Preencha seus dados e veja uma estimativa da sua Taxa Metabólica Basal. Depois, o sistema simula a preparação do plano e mostra uma prévia protegida da dieta.</p><div class="demo-bullets"><div class="demo-bullet"><i>✓</i><span>Cálculo usando a equação de Mifflin–St Jeor.</span></div><div class="demo-bullet"><i>✓</i><span>Resultado instantâneo e personalizado pelos dados informados.</span></div><div class="demo-bullet"><i>✓</i><span>Se quiser liberar o plano completo, você escolhe o acesso no final.</span></div></div></div>
 <div class="calculator">
-<div class="calc-head"><img src="assets/ritmo12-logo.png" alt="Ritmo 12"><span class="calc-badge">SIMULAÇÃO INTERATIVA</span></div>
+<div class="calc-head"><img src="assets/viora-wordmark.jpg" alt="Viora Health"><span class="calc-badge">SIMULAÇÃO RITMO 12</span></div>
 <div class="calc-inner">
   <div id="calcForm">
     <div class="calc-progress"><i class="on"></i><i></i><i></i></div>
@@ -150,7 +170,7 @@ src="https://www.facebook.com/tr?id=27150583831284858&ev=PageView&noscript=1"
     <div class="fine">Estimativa educacional. Não substitui avaliação médica ou nutricional individual.</div>
   </div>
   <div id="calcProcessing" class="processing hidden">
-    <img class="processing-logo" src="assets/ritmo12-logo.png" alt="Ritmo 12"><h3>Preparando sua análise</h3><p>Estamos organizando os dados que você acabou de informar.</p>
+    <img class="processing-logo" src="assets/viora-wordmark.jpg" alt="Viora Health"><h3>Preparando sua análise</h3><p>Estamos organizando os dados que você acabou de informar.</p>
     <div class="process-list" id="processList">
       <div class="process-item"><span class="circle">1</span><span>Recebendo suas informações</span><span></span></div>
       <div class="process-item"><span class="circle">2</span><span>Calculando sua taxa metabólica</span><span></span></div>
@@ -167,7 +187,7 @@ src="https://www.facebook.com/tr?id=27150583831284858&ev=PageView&noscript=1"
   </div>
 </div></div></div></section>
 <section class="section" id="o-que-recebe"><div class="container"><div class="section-head"><div class="kicker">Dentro do Ritmo 12</div><h2>Mais do que um número de calorias.</h2><p>O aplicativo organiza a parte prática do processo para você saber o que comer, acompanhar sua evolução e ter uma próxima ação quando sair do ritmo.</p></div><div class="features"><article class="feature"><div class="feature-icon">01</div><h3>Dieta calculada</h3><p>O app estima TMB e gasto diário, trabalha com uma meta de déficit e distribui o plano em quatro refeições.</p></article><article class="feature"><div class="feature-icon">02</div><h3>Escolha seus alimentos</h3><p>Selecione até cinco fontes de carboidrato, proteína e verduras/legumes para personalizar o cardápio.</p></article><article class="feature"><div class="feature-icon">03</div><h3>Trocas equivalentes</h3><p>Veja substituições com quantidades aproximadas para variar a alimentação sem abandonar a estrutura do plano.</p></article><article class="feature"><div class="feature-icon">04</div><h3>Painel de 12 semanas</h3><p>Registre peso, check-ins e acompanhe seu progresso sem depender de planilhas soltas.</p></article><article class="feature"><div class="feature-icon">05</div><h3>SOS perda de controle</h3><p>Um fluxo rápido para registrar intensidade, reconhecer o gatilho e retomar o planejamento sem punições extremas.</p></article><article class="feature"><div class="feature-icon">06</div><h3>Conteúdo direto ao ponto</h3><p>Orientações curtas para fome, vontade de comer, finais de semana, deslizes e consistência.</p></article></div></div></section>
-<section class="section pricing-section" id="planos"><div class="pricing-wrap"><div class="section-head"><div class="kicker">Acesso ao Ritmo 12</div><h2>Escolha como quer começar.</h2><p>Você recebe acesso ao aplicativo completo. O vitalício está em destaque porque elimina mensalidades futuras.</p></div><div class="price-stack">
+<section class="section pricing-section" id="planos"><div class="pricing-wrap"><div class="section-head"><div class="kicker">VIORA HEALTH · RITMO 12</div><h2>Escolha como quer começar.</h2><p>Tenha acesso ao programa Ritmo 12 e às ferramentas digitais para acompanhar suas próximas 12 semanas.</p></div><div class="price-stack">
   <div class="plan" id="monthlyPlan" data-plan="monthly"><div class="plan-top"><div style="display:flex;gap:13px;align-items:center"><span class="radio"></span><div><h3>Acesso Mensal</h3><p>Para começar pagando o mínimo.</p></div></div><div class="price">R$ 14,90 <small>/mês</small></div></div><div class="plan-details"><span>App completo</span><span>Dieta personalizada</span><span>Cancelar quando quiser</span></div></div>
   <div class="plan featured selected" id="lifetimePlan" data-plan="lifetime"><span class="best">Mais vantajoso</span><div class="plan-top"><div style="display:flex;gap:13px;align-items:center"><span class="radio"></span><div><h3>Acesso Vitalício</h3><p>Pague uma vez e continue com o app.</p></div></div><div class="price">R$ 27,90 <small>único</small></div></div><div class="plan-details"><span>Sem mensalidade</span><span>App completo</span><span>Dieta + acompanhamento</span></div></div>
 </div>
@@ -175,7 +195,7 @@ src="https://www.facebook.com/tr?id=27150583831284858&ev=PageView&noscript=1"
 </div></section>
 <section class="section"><div class="container"><div class="section-head"><div class="kicker">Dúvidas rápidas</div><h2>O que você precisa saber.</h2><p>Respostas simples antes de liberar seu acesso ao Ritmo 12.</p></div><div class="faq"><details><summary>Em quanto tempo eu recebo meu acesso?</summary><p>Assim que o pagamento for aprovado, o acesso pode ser liberado imediatamente para você entrar no Ritmo 12 e começar seu plano.</p></details><details><summary>Preciso saber contar calorias?</summary><p>Não. Você informa seus dados, escolhe os alimentos que prefere e o sistema organiza as estimativas e porções do plano para deixar o processo mais simples.</p></details><details><summary>Eu posso escolher os alimentos que gosto de comer?</summary><p>Sim. O Ritmo 12 permite selecionar fontes de carboidrato, proteína e verduras/legumes para montar um plano mais compatível com suas preferências.</p></details><details><summary>Consigo usar o Ritmo 12 pelo celular?</summary><p>Sim. A experiência foi desenvolvida para funcionar tanto no celular quanto no computador, permitindo acompanhar o plano de onde você estiver.</p></details><details><summary>Posso acompanhar minha evolução dentro do app?</summary><p>Sim. Você pode registrar seu progresso ao longo das 12 semanas e acompanhar seus dados no próprio painel.</p></details></div></div></section>
 </main>
-<footer class="footer"><div class="container"><img src="assets/ritmo12-logo.png" alt="Ritmo 12"><p>Ritmo 12 é uma ferramenta educacional de organização alimentar e acompanhamento de hábitos. Resultados variam conforme características individuais e adesão. Em caso de transtorno alimentar, gestação, condição clínica ou necessidade dietética específica, procure acompanhamento profissional.</p><div class="footer-links"><a href="#">Termos de Uso</a><a href="#">Política de Privacidade</a><a href="#planos">Planos</a></div></div></footer>
+<footer class="footer"><div class="container"><img src="assets/viora-wordmark.jpg" alt="Viora Health"><div class="footer-program">Ritmo 12 · um programa digital Viora Health</div><p>O Ritmo 12 é uma ferramenta educacional de organização alimentar e acompanhamento de hábitos. Resultados variam conforme características individuais e adesão. Em caso de transtorno alimentar, gestação, condição clínica ou necessidade dietética específica, procure acompanhamento profissional.</p><div class="footer-links"><a href="#">Termos de Uso</a><a href="#">Política de Privacidade</a><a href="#planos">Planos</a></div></div></footer>
 
 <div class="upgrade-modal" id="upgradeModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="upgradeTitle">
   <div class="upgrade-card">
